@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "npm run watch & npm run server",
+    "watch": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js",
+    "server": "http-server public/"
+
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,8 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "watchify": "^3.7.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
   }
 }
